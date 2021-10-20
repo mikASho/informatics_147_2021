@@ -1,0 +1,17 @@
+# informatics_147_2021
+#include <iostream>
+#include <cmath>
+ 
+ 
+int main()
+{
+    float a = 4.1, b = 2.7, x_start = 1.5, x_end = 3.6, x_step = 0.4, y;
+    
+    for (x_start; x_start < x_end; x_start+=x_step){
+        y = ( a*a*a*pow(x_start, 0.5) - b * (log(x_start)/log(5)) ) / (pow(log10(x_start-1), 3));
+        std::cout << "f(" << x_start << ")= " << y << std::endl;
+    }
+    
+
+    return 0;
+}
