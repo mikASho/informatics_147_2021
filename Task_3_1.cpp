@@ -48,7 +48,12 @@ double Func_All(int a, double x, double y){
         break;
          
         case 3:
-        cout << "Деление: " << x / y;
+            if(x == 0 || y == 0){
+                cout << "Нельзя делить на ноль!";
+            }   
+                else{
+                    cout << "Деление: " << x / y;
+                    }
         break;
          
         case 4:
