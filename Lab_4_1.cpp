@@ -3,7 +3,6 @@
 
 // функции f(a) и f(c)
 double func_of_a(double);
-double func_of_c(double);
 
 using namespace std;
 int main(){
@@ -51,7 +50,7 @@ int main(){
         double a_c; 
         
         for(int i = 1; i > 0; i++){
-            a_c = func_of_a(a) * func_of_c(c); // Произведение функций f(a)*f(c)
+            a_c = func_of_a(a) * func_of_a(c); // Произведение функций f(a)*f(c)
             
             //Нахождение a, b, c и b-c и вывод на таблицу
             if(a_c > 0){
@@ -100,8 +99,4 @@ int main(){
 
 double func_of_a(double a){
     return pow((a - 1), 2) - 2 * cos(a);
-}
-
-double func_of_c(double c){
-    return pow((c - 1), 2) - 2 * cos(c);
 }

@@ -15,7 +15,7 @@ int main()
 }
  
 int Multiplctn_digit(int number, int Multplctn){
-    int count = 0;
+    int count = 0, save_num = number;
     
     //Проверка на 6-ти значность
     while( number > 0){
@@ -28,9 +28,9 @@ int Multiplctn_digit(int number, int Multplctn){
     }
     
     // Произведение цифр
-     while(number > 0){
-        Multplctn *=  number % 10;
-        number /= 10;
+     while(save_num > 0){
+        Multplctn *=  save_num % 10;
+        save_num /= 10;
     }
     cout << "Произведение цифр равно : " << Multplctn;
     return 0;

@@ -5,9 +5,10 @@ using namespace std;
 
 int main()
 {
-    int num = 0, t = 0, d = 1, k = 0, num_alf;
+    int num = 0, t = 0, d = 1, k = 0, num_8, num_16;
     cout << "Введите десятичное число: ";
     cin >> num;
+    num_8 = num, num_16 = num;
     
     while(num){
         t += (num % 2) * d; //сумма числа
@@ -16,46 +17,52 @@ int main()
     }
     cout << "Число в двоичной системе исчисления: " << t << endl;
     
-    num = 0, t = 0, d = 1;
-    cout << "Введите число в восьмиричной системе исчисления: ";
-    cin >> num;
+    t = 0;
     
     //перевод из 8-ой в 10-ую сс
-    while(num){
-        t += (num % 10) * pow(8, k); 
-        num = num / 10;
+    while(num_8){
+        t += (num_8 % 10) * pow(8, k); 
+        num_8 = num_8 / 10;
         k++;
     }
-    num = t;
-    t = 0;
+    cout << "Число в восьмиричной системе исчисления: "<< t << endl;
+
+    d = 1, t;
+    int i = 0;
+    int save_num[3]{111,111,111};
     //перевод из 10-ой в 16-ую
-    while(num){
-        t += (num % 16) * d;
-        num = num / 16;
-        d = d * 10;
+    while(num_16){
+        t = (num_16 % 16);
+        num_16 = num_16 / 16;
+        save_num[i] = t;
+        i++;
     }
-    num_alf = t / 10;
-    if(num_alf == 10){
-        cout << "Число в шетнадцатиричной системе исчисления: A" << t%10; 
+    cout << "Число в шетнадцатиричной системе: ";
+    for(int i = 2; i > -1; i--){
+        if(save_num[i] == 111){
+            cout <<"";
+        }
+        else if(save_num[i] == 10){
+            cout << "A"; 
+        }
+            else if(save_num[i] == 11){
+                cout << "B";
+            }
+                else if(save_num[i] == 12){
+                    cout << "C";
+                }
+                    else if(save_num[i] == 13){
+                        cout << "D";
+                    }
+                        else if(save_num[i] == 14){
+                            cout << "E";
+                        }
+                             else if(save_num[i] == 15){
+                                cout << "F";
+                            }
+                                else{
+                                    cout << save_num[i];
+                                }
     }
-    else if(num_alf == 11){
-        cout << "Число в шетнадцатиричной системе исчисления: B" << t%10;
-    }
-    else if(num_alf == 12){
-        cout << "Число в шетнадцатиричной системе исчисления: C" << t%10;
-    }
-    else if(num_alf == 13){
-        cout << "Число в шетнадцатиричной системе исчисления: D" << t%10;
-    }
-    else if(num_alf == 14){
-        cout << "Число в шетнадцатиричной системе исчисления: E" << t%10;
-    }
-    else if(num_alf == 15){
-        cout << "Число в шетнадцатиричной системе исчисления: F" << t%10;
-    }
-    else{
-        cout << "Число в шетнадцатиричной системе исчисления: " << t;
-    }
-    
     return 0;
 }
