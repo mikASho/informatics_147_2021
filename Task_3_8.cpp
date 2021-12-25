@@ -7,7 +7,7 @@ int main()
     setlocale(LC_ALL, "");
     srand(time(NULL));
     
-    const int row, columns, Min, Max;
+    int row, columns;
     cout <<"Введите количество строк и столбцов массива: ";
     cin >> row >> columns;
     

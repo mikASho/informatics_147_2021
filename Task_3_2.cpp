@@ -16,7 +16,6 @@ int main()
 {   
     setlocale(LC_ALL, "");
     double P, n; 
-    
     cout << "Введите сумму вклада и срок депозита: " << endl;
     cin >> P >> n;
     cout << "Вознаграждение за 3 месяца: " << calculateSum_3(P, n) << endl;
